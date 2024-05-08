@@ -1,0 +1,31 @@
+{
+    "horizontal_slider": {
+        "colours": {
+            "normal_bg": "#69481b",
+            "hovered_bg": "#d7a764",
+            "disabled_bg": "#69481b",
+            "selected_bg": "#69481b",
+            "active_bg": "#d39d8d",
+            "dark_bg": "#6d8c84,#3c4444,0",
+            "normal_text": "#000000",
+            "hovered_text": "#000000",
+            "selected_text": "#000000",
+            "disabled_text": "#000000"
+        },
+        "misc": {
+           "shape": "rectangle",
+           "enable_arrow_buttons": "2",
+           "sliding_button_width": "15"
+        }
+    },
+    "horizontal_slider.button": {
+        "misc": {
+           "border_width": "1"
+        }
+    },
+    "horizontal_slider.#sliding_button": {
+        "colours": {
+           "normal_bg": "#b1aab7"
+        }
+    }
+}
