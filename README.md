@@ -42,7 +42,63 @@ Said properties mainly include the following:
 Some of the results we achieved the following results for the different experiments:
 
 <div>
-<b>Vertical Tropism</b>
+<b>1- Vertical Tropism</b>
 <br>
 <img align='center' src='report/vt_only.png' width="50%" /> <img align='center' src='report/vt_only_dr.png' />
 </div>
+
+<br>
+
+<div>
+<b>2- Bilateral Symmetry</b>
+<br>
+<img align='center' src='report/Sym_only_oa.png' width='50%' /> <img align='center' src='report/symm_only_dr.png'/>
+</div>
+
+<br>
+
+<div>
+<b>3- Photon Gathering Ability</b>
+<br>
+<img align='center' src='report/pg_only.png' width='50%' /> <img align='center' src='report/pg_only_dr.png'/>
+</div>
+
+<br>
+
+<div>
+<b>4- Stability</b>
+<br>
+<img align='center' src='report/s_only.png' width='50%' /> <img align='center' src='report/s_only_dr.png' />
+</div>
+
+<br>
+
+<div>
+<b></b>
+<br>
+<img align='center' src='' width='%' /> <img align='center' src='' width='%' />
+</div>
+
+<br>
+
+<div>
+<b>5- Branchiing Proliferation</b>
+<br>
+<img align='center' src='report/bp_only.png' width='50%' /> <img align='center' src='report/bp_only_dr.png' />
+</div>
+
+<br>
+
+<div>
+<b>More Good Results</b>
+<br>
+<img align='center' src='report/block1.png' width='50%' /> <img align='center' src='report/tree_block2.png' />
+
+<br>
+<img align='center' src='report/image2.png' width='50%' /> <img align='center' src='report/img2.png' />
+
+<br>
+<img align='center' src='report/image3.png' width='50%' /> <img align='center' src='report/image6.png' />
+</div>
+
+
