@@ -1,0 +1,113 @@
+\section{Lindenmayer System}
+L-systems, short for Lindenmayer systems, are mathematical models used to describe the growth processes of plants, algae, and other natural structures. They were introduced by biologist Aristid Lindenmayer in 1968 as a way to formalize the study of the development of simple multicellular organisms. 
+
+L-systems consist of an alphabet of symbols, a collection of production rules, an initial axiom, and an iteration process. The symbols in the alphabet represent various elements of the system, such as the components of a plant or the instructions for drawing a fractal. The production rules describe how the symbols are replaced or modified in each iteration of the system.
+
+Typically, L-systems are used to generate complex and intricate structures through iterative application of simple rules. They have found applications in computer graphics, where they are used to model the growth of trees, the formation of branching patterns, and the generation of realistic plant-like shapes. They are also used in artificial life simulations and in the study of biological pattern formation.
+
+There are two main things that L systems introduced:
+
+\begin{enumerate}
+    \item \textbf{Parallelism}: This means that when parts of a living thing are growing, they can change at the same time. In real life, different parts of a plant might be growing or changing all at once, rather than one after the other. L systems allow us to describe this kind of simultaneous growth \cite{rozenberg1980mathematical}.
+    
+    \item \textbf{Dynamic Grammar}: Normally, when we think of grammar, we think of rules for putting words together to form sentences. But in the context of L systems, grammar is seen as a set of rules that describe how something changes over time. It is not just static rules but rules that happen in a sequence.
+\end{enumerate}
+
+\vspace*{4mm}
+\noindent\subsection{Rule Generation}
+The process of generating strings in L-systems involves substitutions based on defined rules, starting from an initial axiom. These elements play a crucial role in determining the structure of the resulting strings and, consequently, the visual interpretation by the turtle.
+
+\vspace*{3mm}
+\noindent\textbf{Variables:}
+In L-systems, variables represent symbols or characters that undergo substitution or transformation according to predefined rules. These variables define the alphabet or set of symbols used in the L-system. We have used the following variables to generate rules:
+\{F, +, -, [, ]\}
+Each variable represents how drawing is done. We leveraged the Turtle Library of python to view the drawing of the tree structure. The Turtle navigates the $x$-$y$ plane, adjusting its position and orientation based on encountered symbols within the L-system string. The turtle's state is defined by a triplet of coordinates $(x, y, \alpha)$, where $(x, y)$ represent its Cartesian position, and $\alpha$ denotes its direction. Here is how each character in the Rule string is interpreted by the Turtle:
+\begin{itemize}
+ \item "F" symbol: Upon encountering the "F" symbol, the turtle advances forward with a step size of $\delta$, updating its position accordingly. 
+    \begin{itemize}
+        \item This movement involves incrementing the angle by $\theta$ whenever the turtle encounters the "+" symbol, resulting in a left turn. 
+        \item Conversely, encountering the "-" symbol prompts a right turn, adjusting the turtle's orientation. 
+        \item These simple rules facilitate the generation of intricate shapes and patterns.
+    \end{itemize}
+\item "[ ]" symbol: The approach maintains a stack to manage branching structures denoted by "[" and "]" symbols. 
+\begin{itemize}
+\item Upon encountering "[," the current turtle state is pushed onto the stack, indicating the start of a branch. 
+        \item Conversely, "]" signifies the end of a branch, prompting the retrieval of the topmost state from the stack to reset the turtle's position.
+\end{itemize}
+\end{itemize}
+
+\vspace*{3mm}
+\noindent\textbf{Axioms:} The axiom of an L-system serves as the starting point for string generation. It represents the initial configuration from which subsequent strings are derived through iterations. In our case the axiom is $'F'$
+
+\vspace*{3mm}
+\noindent\textbf{Substitutions:} Substitutions in L-systems entail replacing symbols in a string according to predefined rules. Substitution for our L-system is dynamic to ensure that an evolutionary algorithm can be used to evolve the plant instead of using an already optimized rule. Our substitution rule is:
+Let the first randomly generated rule be: \[F[-F]F[+F][F]\] 
+Then,
+\[
+\{w: F, p: F \rightarrow F[-F]F[+F][F]\}
+\]
+where,
+\begin{itemize}
+    \item $w$: Represents the axiom of the L-system, which is the initial symbol or starting point of the string generation process. 
+    \item $p$: Represents the production rule or substitution rule of the L-system. 
+\end{itemize}
+The symbol $F$ is substituted with the sequence $F[-F]F[+F][F]$. This substitution rule specifies how the symbol $F$ evolves in subsequent iterations of the L-system derivation. This keeps on changing based on the generated population of strings.
+
+\vspace*{3mm}
+\noindent\textbf{Validations Checks:}
+We applied some validation checks on the rule to ensure the L-system was sustainable. The Validation checks were as follows:
+\begin{itemize}
+\item Each occurrence of "[" signifies the opening of a branch, and to ensure proper closure, we maintain a count of branches.
+\item To determine the maximum characters that can be added within each branch, we establish a branch length equal to 30\% of the chromosome's length. Thus, every branch contains at least one character, preventing any empty branches.
+\item If the chromosome contains a "+" symbol, the subsequent character cannot be "-", as it would negate the turtle's previous turn. Similarly, after encountering "-", the next character cannot be "+". Therefore, each "+" or "-" must be followed by either "F" or another branch.
+\item When multiple branches are present, each one initiates only after the completion of the previous branch, ensuring that no branch is nested within another.
+\end{itemize}
+
+
+
+% \subsection{Rule Generation:} Rule generation in L-systems involves defining transformation rules that govern the evolution of symbols over iterations. These rules determine how each symbol is replaced by a sequence of symbols in subsequent generations. Rule generation is essential for specifying the behavior of the system and influencing the resulting structures. For example, the rule $F \rightarrow F[-F]F[+F][F]$ in the L-system determines how the symbol $F$ is replaced in each iteration, leading to the generation of complex branching patterns.
+
+% By employing substitutions, axioms, and rule generation, L-systems provide a systematic framework for generating intricate structures from simple rules, facilitating the creation of diverse visual patterns with applications in various fields of study.
+
+% \textbf{Validations Checks:}
+% We applied some validation checks on the rule to ensure the L-system was sustainable. The Validation checks were as follows:
+% \begin{itemize}
+% \item Each occurrence of "[" signifies the opening of a branch, and to ensure proper closure, we maintain a count of branches.
+% \item To determine the maximum characters that can be added within each branch, we establish a branch length equal to 30\% of the chromosome's length. Thus, every branch contains at least one character, preventing any empty branches.
+% \item If the chromosome contains a "+" symbol, the subsequent character cannot be "-", as it would negate the turtle's previous turn. Similarly, after encountering "-", the next character cannot be "+". Therefore, each "+" or "-" must be followed by either "F" or another branch.
+% \item When multiple branches are present, each one initiates only after the completion of the previous branch, ensuring that no branch is nested within another.
+% \end{itemize}
+
+
+
+
+% ====================================
+% Turtle geometry, inspired by the Logo programming language developed by Seymour Papert and colleagues at MIT, is a significant advancement in modeling L-systems. This approach provides a geometric interpretation of L-systems, employing a turtle that navigates the $x$-$y$ plane, adjusting its position and orientation based on encountered symbols within the L-system string. The turtle's state is defined by a triplet of coordinates $(x, y, \alpha)$, where $(x, y)$ represent its Cartesian position, and $\alpha$ denotes its direction.
+
+% The rules governing the turtle's movement are concise:
+
+% \begin{enumerate}
+%     \item \textbf{"F" symbol}: Upon encountering the "F" symbol, the turtle advances forward with a step size of $\delta$, updating its position accordingly. 
+%     \begin{itemize}
+%         \item This movement involves incrementing the angle by $\theta$ whenever the turtle encounters the "+" symbol, resulting in a left turn. 
+%         \item Conversely, encountering the "-" symbol prompts a right turn, adjusting the turtle's orientation. 
+%         \item These simple rules facilitate the generation of intricate shapes and patterns.
+%     \end{itemize}
+
+
+
+
+
+%     \item \textbf{Character interpretation}: Each character in the L-system string functions as a command, dictating changes to the turtle's state. 
+%     \begin{itemize}
+%         \item The approach maintains a stack to manage branching structures denoted by "[" and "]" symbols. 
+%         \item Upon encountering "[," the current turtle state is pushed onto the stack, indicating the start of a branch. 
+%         \item Conversely, "]" signifies the end of a branch, prompting the retrieval of the topmost state from the stack to reset the turtle's position.
+%     \end{itemize}
+
+
+% In summary, turtle geometry offers an intuitive and powerful method for modeling L-systems:
+
+
+%     \item \textbf{Versatile framework}: Through straightforward rules governing turtle movement and management of branching structures, this approach provides a versatile framework for generating diverse patterns and forms.
+% \end{enumerate}
