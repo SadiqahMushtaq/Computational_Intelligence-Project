@@ -9,7 +9,6 @@ Our final report and paper can also be found [here](Lindenmayer_Optimization_An_
 ### Background 
 L-systems, or Lindenmayer systems, are a mathematical formalism introduced by biologist Aristid Lidenmayer in 1968. They describe growth processes of biological organisms and find applications in computer graphics, particularly for generating complex and natural-looking structures.
 
-
 ### Problem Addressed
 We aim to optimize L-systems to fulfill specific criteria such as realism, complexity, or symmetry. While L-systems can self-generate, they often lack optimization for desired properties. By employing EAs, we can evolve L-system rules to produce structures that better fulfill these properties.
 
@@ -19,6 +18,8 @@ Said properties mainly include the following:
 3. **Stability:** measures the structural integrity of plants. Plants with fewer branches emanating from each point are considered more stable, as excessive branching can lead to structural weakness.
 4. **Photon Harvesting Ability:** quantifies the plant's efficiency in capturing sunlight for photosynthesis.
 5. **Branching Proliferation:** examines the density and abundance of branches in plant structures. Plants with a higher proportion of branching points and multiple branches demonstrate enhanced capacity for resource acquisition and reproduction.
+
+---
 
 ### Evolutionary Algorithm Applied
 
@@ -74,14 +75,6 @@ Some of the results we achieved the following results for the different experime
 <br>
 
 <div>
-<b></b>
-<br>
-<img align='center' src='' width='%' /> <img align='center' src='' width='%' />
-</div>
-
-<br>
-
-<div>
 <b>5- Branchiing Proliferation</b>
 <br>
 <img align='center' src='report/bp_only.png' width='50%' /> <img align='center' src='report/bp_only_dr.png' />
@@ -101,4 +94,14 @@ Some of the results we achieved the following results for the different experime
 <img align='center' src='report/image3.png' width='50%' /> <img align='center' src='report/image6.png' />
 </div>
 
+---
 
+### Contributors
+- Lyeba Abid
+- Sadiqah Mushtaq
+- Ali Muhammad Asad
+
+---
+
+### Supervisor
+- Dr. Saleha Raza
