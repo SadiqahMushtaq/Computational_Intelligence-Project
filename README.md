@@ -1,4 +1,4 @@
-# Computational Intelligence Project
+# L-Systems Optimization using Evolutionary Algorithm
 
 ## Project Overview
 This project implements **Computational Intelligence** techniques, particularly focusing on **Evolutionary Algorithms (EA)** and **L-Systems** for rule-based procedural generation. The project includes modules for **fitness evaluation**, **rule generation**, and **visualization** using **turtle graphics**.
